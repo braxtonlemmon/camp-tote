@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import UserProfile from "./components/user-profile";
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -58,6 +60,9 @@ export default function Home() {
           >
             Documentation
           </a>
+        </div>
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 w-full">
+          <UserProfile />
         </div>
       </main>
     </div>
