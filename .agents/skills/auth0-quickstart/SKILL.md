@@ -5,7 +5,7 @@ description: >
 license: Apache-2.0
 metadata:
   author: Auth0 <support@auth0.com>
-  version: '1.0.0'
+  version: "1.0.0"
   openclaw:
     emoji: "\U0001F510"
     homepage: https://github.com/auth0/agent-skills
@@ -20,7 +20,7 @@ metadata:
         kind: brew
         package: auth0/auth0-cli/auth0
         bins: [auth0]
-        label: 'Install Auth0 CLI (brew)'
+        label: "Install Auth0 CLI (brew)"
 ---
 
 # Auth0 Quickstart
@@ -43,20 +43,20 @@ ls -la | grep -E "angular.json|vue.config.js|next.config|app.json|Package.swift|
 
 **Framework Detection Table:**
 
-| Framework | Detection | Skill to Use |
-|-----------|-----------|--------------|
-| React (Vite/CRA) | `"react"` in package.json, no Next.js | `auth0-react` |
-| Next.js | `"next"` in package.json | `auth0-nextjs` |
-| Vue.js | `"vue"` in package.json, no Nuxt | `auth0-vue` |
-| Nuxt | `"nuxt"` in package.json | `auth0-nuxt` |
-| Angular | `angular.json` exists or `"@angular/core"` | `auth0-angular` |
-| Express.js | `"express"` in package.json | `auth0-express` |
-| Fastify (web app) | `"fastify"` in package.json, has `@fastify/view` | `auth0-fastify` |
-| Fastify (API) | `"fastify"` in package.json, no view engine | `auth0-fastify-api` |
-| React Native | `"react-native"` or `"expo"` in package.json | `auth0-react-native` |
-| Flask | `"flask"` in requirements.txt, Pipfile, or pyproject.toml | `auth0-flask` |
-| Node.js API | `"express-oauth2-jwt-bearer"` in package.json | `express-oauth2-jwt-bearer` |
-| ASP.NET Core web app | `*.csproj` exists, has `Views/` or `Pages/` folder | `auth0-aspnetcore-authentication` |
+| Framework            | Detection                                                 | Skill to Use                      |
+| -------------------- | --------------------------------------------------------- | --------------------------------- |
+| React (Vite/CRA)     | `"react"` in package.json, no Next.js                     | `auth0-react`                     |
+| Next.js              | `"next"` in package.json                                  | `auth0-nextjs`                    |
+| Vue.js               | `"vue"` in package.json, no Nuxt                          | `auth0-vue`                       |
+| Nuxt                 | `"nuxt"` in package.json                                  | `auth0-nuxt`                      |
+| Angular              | `angular.json` exists or `"@angular/core"`                | `auth0-angular`                   |
+| Express.js           | `"express"` in package.json                               | `auth0-express`                   |
+| Fastify (web app)    | `"fastify"` in package.json, has `@fastify/view`          | `auth0-fastify`                   |
+| Fastify (API)        | `"fastify"` in package.json, no view engine               | `auth0-fastify-api`               |
+| React Native         | `"react-native"` or `"expo"` in package.json              | `auth0-react-native`              |
+| Flask                | `"flask"` in requirements.txt, Pipfile, or pyproject.toml | `auth0-flask`                     |
+| Node.js API          | `"express-oauth2-jwt-bearer"` in package.json             | `express-oauth2-jwt-bearer`       |
+| ASP.NET Core web app | `*.csproj` exists, has `Views/` or `Pages/` folder        | `auth0-aspnetcore-authentication` |
 
 **Don't see your framework?** See Tier 2 Frameworks below.
 
@@ -67,11 +67,13 @@ ls -la | grep -E "angular.json|vue.config.js|next.config|app.json|Package.swift|
 ### Install Auth0 CLI
 
 **macOS/Linux:**
+
 ```bash
 brew install auth0/auth0-cli/auth0
 ```
 
 **Windows:**
+
 ```bash
 scoop install auth0
 # Or: choco install auth0-cli
@@ -94,6 +96,7 @@ This opens your browser to authenticate with Auth0.
 Choose application type based on your framework:
 
 **Single Page Applications (React, Vue, Angular):**
+
 ```bash
 auth0 apps create --name "My App" --type spa \
   --auth-method None \
@@ -103,6 +106,7 @@ auth0 apps create --name "My App" --type spa \
 ```
 
 **Regular Web Apps (Next.js, Nuxt, Express, Fastify):**
+
 ```bash
 auth0 apps create --name "My App" --type regular \
   --callbacks "http://localhost:3000/api/auth/callback" \
@@ -111,6 +115,7 @@ auth0 apps create --name "My App" --type regular \
 ```
 
 **Native Apps (React Native):**
+
 ```bash
 auth0 apps create --name "My App" --type native \
   --auth-method None \
@@ -120,6 +125,7 @@ auth0 apps create --name "My App" --type native \
 ```
 
 **Get your credentials:**
+
 ```bash
 auth0 apps list          # Find your app
 auth0 apps show <app-id> # Get client ID and secret
@@ -150,6 +156,7 @@ Based on your framework detection, use the appropriate skill:
 ### Tier 1 Frameworks (Dedicated Skills)
 
 **Frontend:**
+
 - **`auth0-react`** - React SPAs (Vite, Create React App)
 - **`auth0-nextjs`** - Next.js (App Router and Pages Router)
 - **`auth0-vue`** - Vue.js 3 applications
@@ -157,6 +164,7 @@ Based on your framework detection, use the appropriate skill:
 - **`auth0-angular`** - Angular 12+ applications
 
 **Backend:**
+
 - **`auth0-express`** - Express.js web applications
 - **`auth0-flask`** - Flask web applications
 - **`auth0-fastify`** - Fastify web applications
@@ -165,6 +173,7 @@ Based on your framework detection, use the appropriate skill:
 - **`auth0-aspnetcore-authentication`** - ASP.NET Core MVC, Razor Pages, Blazor Server web applications
 
 **Mobile:**
+
 - **`auth0-react-native`** - React Native and Expo (iOS/Android)
 
 ### Tier 2 Frameworks (Use Auth0 Docs)
@@ -172,10 +181,12 @@ Based on your framework detection, use the appropriate skill:
 Not yet available as separate skills. Use Auth0 documentation:
 
 **Frontend:**
+
 - [SvelteKit](https://auth0.com/docs/quickstart/webapp/sveltekit)
 - [Remix](https://auth0.com/docs/quickstart/webapp/remix)
 
 **Backend:**
+
 - [FastAPI (Python)](https://auth0.com/docs/quickstart/backend/python)
 - [Django (Python)](https://auth0.com/docs/quickstart/webapp/django)
 - [Rails (Ruby)](https://auth0.com/docs/quickstart/webapp/rails)
@@ -184,6 +195,7 @@ Not yet available as separate skills. Use Auth0 documentation:
 - [Spring Boot](https://auth0.com/docs/quickstart/webapp/java-spring-boot)
 
 **Mobile:**
+
 - [iOS (Swift)](https://auth0.com/docs/quickstart/native/ios-swift)
 - [Android (Kotlin)](https://auth0.com/docs/quickstart/native/android)
 - [Flutter](https://auth0.com/docs/quickstart/native/flutter)
@@ -195,6 +207,7 @@ Not yet available as separate skills. Use Auth0 documentation:
 **Migrating from another auth provider?** Use the **`auth0-migration`** skill.
 
 The migration skill covers:
+
 - User export from Firebase, Cognito, Supabase, Clerk, etc.
 - Bulk import to Auth0
 - Code migration patterns (before/after examples)
@@ -206,13 +219,17 @@ The migration skill covers:
 ## Reference Documentation
 
 ### Environment Variables
+
 Framework-specific environment variable setup:
+
 - [Vite, Create React App, Angular](references/environments.md#single-page-applications-spas)
 - [Next.js, Express](references/environments.md#server-side-applications)
 - [React Native, Expo](references/environments.md#mobile-applications)
 
 ### Auth0 Concepts
+
 Core concepts and troubleshooting:
+
 - [Application Types](references/concepts.md#application-types)
 - [Key Terms](references/concepts.md#key-terms)
 - [OAuth Flows](references/concepts.md#oauth-flows)
@@ -220,7 +237,9 @@ Core concepts and troubleshooting:
 - [Security Best Practices](references/concepts.md#security-best-practices)
 
 ### CLI Commands
+
 Complete Auth0 CLI reference:
+
 - [CLI Installation](references/cli.md#installation)
 - [Creating Applications](references/cli.md#creating-applications)
 - [User Management](references/cli.md#user-management)
@@ -231,23 +250,25 @@ Complete Auth0 CLI reference:
 
 ## Common Mistakes
 
-| Mistake | Fix |
-|---------|-----|
-| Wrong application type | SPAs need "Single Page Application", server apps need "Regular Web Application", mobile needs "Native" |
-| Callback URL not configured | Add your app's callback URL to Allowed Callback URLs in Auth0 Dashboard |
-| Using wrong credentials | Client Secret only needed for Regular Web Apps, not SPAs |
-| Hardcoding credentials in code | Always use environment variables, never commit secrets to git |
-| Not testing locally first | Set up localhost URLs in Auth0 before deploying to production |
-| Mixing application types | Don't use SPA SDK for server-side apps or vice versa |
+| Mistake                        | Fix                                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| Wrong application type         | SPAs need "Single Page Application", server apps need "Regular Web Application", mobile needs "Native" |
+| Callback URL not configured    | Add your app's callback URL to Allowed Callback URLs in Auth0 Dashboard                                |
+| Using wrong credentials        | Client Secret only needed for Regular Web Apps, not SPAs                                               |
+| Hardcoding credentials in code | Always use environment variables, never commit secrets to git                                          |
+| Not testing locally first      | Set up localhost URLs in Auth0 before deploying to production                                          |
+| Mixing application types       | Don't use SPA SDK for server-side apps or vice versa                                                   |
 
 ---
 
 ## Related Skills
 
 ### Core Integration
+
 - `auth0-migration` - Migrate from other auth providers
 
 ### SDK Skills
+
 - `auth0-spa-js` - SPA integration
 - `auth0-react` - React SPA integration
 - `auth0-nextjs` - Next.js integration
@@ -268,6 +289,7 @@ Complete Auth0 CLI reference:
 - `auth0-aspnetcore-api` - ASP.NET Core API authentication
 
 ### Advanced Features
+
 - `auth0-mfa` - Multi-Factor Authentication
 
 ---
