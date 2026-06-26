@@ -1,8 +1,11 @@
 import Image from "next/image";
 
-import UserProfile from "./components/user-profile";
+import prisma from "@/lib/prisma";
 
-export default function Home() {
+import UserProfile from "./components/user-profile";
+export default async function Home() {
+  const users = await prisma.user.findMany();
+
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -64,6 +67,13 @@ export default function Home() {
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 w-full">
           <UserProfile />
         </div>
+        <ol className="list-decimal list-inside ">
+          {users.map((user) => (
+            <li key={user.id} className="mb-2">
+              {user.name}
+            </li>
+          ))}
+        </ol>
       </main>
     </div>
   );
