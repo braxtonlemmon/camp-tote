@@ -5,7 +5,6 @@ import Image from "next/image";
 
 export default function UserProfile() {
   const { user, isLoading } = useUser();
-  console.log("UserProfile user:", user);
 
   if (isLoading) {
     return <div className="p-4">Loading...</div>;
