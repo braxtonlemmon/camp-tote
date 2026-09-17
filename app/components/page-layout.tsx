@@ -8,7 +8,7 @@ export default function PageLayout({
   return (
     <div className="w-full h-full flex flex-col items-center">
       <Header />
-      <main className="p-4">{children}</main>
+      <main className="p-4 w-full">{children}</main>
       {/* // footer */}
     </div>
   );
