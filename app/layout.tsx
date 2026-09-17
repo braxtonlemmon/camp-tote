@@ -2,17 +2,14 @@ import "./globals.css";
 
 import { Auth0Provider } from "@auth0/nextjs-auth0/client";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 
 import { auth0 } from "@/lib/auth0";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import PageLayout from "./components/page-layout";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -29,12 +26,11 @@ export default async function RootLayout({
   const session = await auth0.getSession();
 
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Auth0Provider user={session?.user}>{children}</Auth0Provider>
+    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
+      <body>
+        <Auth0Provider user={session?.user}>
+          <PageLayout>{children}</PageLayout>
+        </Auth0Provider>
       </body>
     </html>
   );
