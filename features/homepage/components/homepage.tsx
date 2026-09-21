@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function Homepage() {
-  const [questionToUser, setQuestionToUser] = useState<string>(
+  const [questionToUser] = useState<string>(
     "Let's start! First off, where are you going?",
   );
   const [userResponse, setUserResponse] = useState<string>("");
