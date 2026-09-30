@@ -13,10 +13,12 @@
     "validate": "pnpm lint && pnpm typecheck && pnpm format:check"
   },
   "dependencies": {
+    "@ai-sdk/react": "^4.0.125",
     "@auth0/nextjs-auth0": "^4.23.0",
     "@heroicons/react": "^2.2.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "ai": "^7.0.122",
     "dotenv": "^17.4.2",
     "next": "16.2.9",
     "pg": "^8.22.0",
@@ -38,5 +40,6 @@
     "tailwindcss": "^4",
     "tsx": "^4.22.4",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@12.6.0+sha512.3ef68f951cb111ac204b4a5a16f0b2ddf0da56a96e0413e81d855d9f0b55ef926714709028e1cd00c405c2c5fb7b9e8ec4dc46777c805d0373c2f2ff00fd20ec"
 }
